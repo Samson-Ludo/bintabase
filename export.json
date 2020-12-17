@@ -1,0 +1,1906 @@
+{
+    "cmsType": "contentful",
+    "projectTitle": "Stackbit Ampersand Theme",
+    "staticDir": "static",
+    "pagesDir": "src/pages",
+    "dataDir": "src/data",
+    "uploadDir": "images",
+    "pageContentFieldKey": "content",
+    "objectTypeKey": "type",
+    "models": [
+        {
+            "type": "config",
+            "name": "config",
+            "label": "Site Configuration",
+            "fieldNames": null
+        },
+        {
+            "type": "object",
+            "name": "header",
+            "label": "Header Configuration",
+            "fieldNames": null
+        },
+        {
+            "type": "object",
+            "name": "footer",
+            "label": "Footer Configuration",
+            "fieldNames": null
+        },
+        {
+            "type": "page",
+            "name": "home",
+            "label": "Home",
+            "fieldNames": null
+        },
+        {
+            "type": "page",
+            "name": "contact",
+            "label": "Contact",
+            "fieldNames": null
+        },
+        {
+            "type": "page",
+            "name": "page",
+            "label": "Page",
+            "fieldNames": null
+        },
+        {
+            "type": "page",
+            "name": "post",
+            "label": "Post",
+            "fieldNames": null
+        },
+        {
+            "type": "object",
+            "name": "action",
+            "label": "Action",
+            "fieldNames": null
+        },
+        {
+            "type": "object",
+            "name": "form_field",
+            "label": "Form Field",
+            "fieldNames": null
+        }
+    ],
+    "contentTypes": [
+        {
+            "id": "action",
+            "name": "Action",
+            "description": null,
+            "displayField": "label",
+            "fields": [
+                {
+                    "type": "Text",
+                    "id": "label",
+                    "name": "Label",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "url",
+                    "name": "URL",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Symbol",
+                    "id": "style",
+                    "name": "Style",
+                    "localized": false,
+                    "required": true,
+                    "validations": [
+                        {
+                            "in": [
+                                "link",
+                                "primary",
+                                "secondary",
+                                "icon"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "icon_class",
+                    "name": "Icon",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Boolean",
+                    "id": "new_window",
+                    "name": "Open in new tab/window",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "type",
+                    "name": "Object Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "label": {
+                    "widgetId": "singleLine"
+                },
+                "url": {
+                    "widgetId": "singleLine"
+                },
+                "style": {
+                    "widgetId": "default-field-value",
+                    "settings": {
+                        "defaultValue": "link"
+                    }
+                },
+                "icon_class": {
+                    "settings": {
+                        "helpText": "Font Awesome icon class name, used only when style is \"icon\"."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "new_window": {
+                    "widgetId": "default-boolean-value",
+                    "settings": {
+                        "defaultValue": false
+                    }
+                },
+                "type": {
+                    "settings": {
+                        "helpText": "The type of the object",
+                        "defaultValue": "action",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "object",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        },
+        {
+            "id": "footer",
+            "name": "Footer Configuration",
+            "description": null,
+            "displayField": "content",
+            "fields": [
+                {
+                    "type": "Text",
+                    "id": "content",
+                    "name": "Footer Content",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Array",
+                    "id": "links",
+                    "name": "Links",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "linkType": "Entry",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "Boolean",
+                    "id": "has_social",
+                    "name": "Enable Social Links",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Array",
+                    "id": "social_links",
+                    "name": "Social Links",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "linkType": "Entry",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "Boolean",
+                    "id": "has_subscribe",
+                    "name": "Enable Subscribe Section",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "subscribe_title",
+                    "name": "Title",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "subscribe_content",
+                    "name": "Content",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "subscribe_action",
+                    "name": "Subscribe Form Action",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "type",
+                    "name": "Object Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "content": {
+                    "settings": {
+                        "helpText": "The copyright text displayed in the footer."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "links": {
+                    "settings": {
+                        "helpText": "List of links in the footer."
+                    }
+                },
+                "has_social": {
+                    "settings": {
+                        "helpText": "Display social links in the footer.",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value"
+                },
+                "social_links": {
+                    "settings": {
+                        "helpText": "List of social links in the footer."
+                    }
+                },
+                "has_subscribe": {
+                    "settings": {
+                        "helpText": "Display the newsletter subscription section in the footer.",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value"
+                },
+                "subscribe_title": {
+                    "settings": {
+                        "helpText": "The title of the subscribe section."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "subscribe_content": {
+                    "settings": {
+                        "helpText": "The text content of the subscribe section."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "subscribe_action": {
+                    "settings": {
+                        "helpText": "The path of your custom \"success\" page, if you want to replace the default success message."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "type": {
+                    "settings": {
+                        "helpText": "The type of the object",
+                        "defaultValue": "footer",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "object",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        },
+        {
+            "id": "form_field",
+            "name": "Form Field",
+            "description": null,
+            "displayField": "name",
+            "fields": [
+                {
+                    "type": "Symbol",
+                    "id": "input_type",
+                    "name": "Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [
+                        {
+                            "in": [
+                                "text",
+                                "email",
+                                "tel",
+                                "number",
+                                "checkbox",
+                                "textarea",
+                                "select"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "name",
+                    "name": "Name",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "label",
+                    "name": "Label",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "default_value",
+                    "name": "Default Value",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Array",
+                    "id": "options",
+                    "name": "Options",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Symbol"
+                    }
+                },
+                {
+                    "type": "Boolean",
+                    "id": "is_required",
+                    "name": "Is the field required?",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "type",
+                    "name": "Object Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "input_type": {
+                    "settings": {
+                        "helpText": "Type of the form field."
+                    },
+                    "widgetId": "dropdown"
+                },
+                "name": {
+                    "settings": {
+                        "helpText": "The name of the field, submitted with the form."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "label": {
+                    "settings": {
+                        "helpText": "The caption of the field, shown above the field input."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "default_value": {
+                    "settings": {
+                        "helpText": "The default value for textual field types."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "options": {
+                    "settings": {
+                        "helpText": "The list of options, used only when the field type is \"select\"."
+                    }
+                },
+                "is_required": {
+                    "widgetId": "default-boolean-value",
+                    "settings": {
+                        "defaultValue": false
+                    }
+                },
+                "type": {
+                    "settings": {
+                        "helpText": "The type of the object",
+                        "defaultValue": "form_field",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "object",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        },
+        {
+            "id": "header",
+            "name": "Header Configuration",
+            "description": null,
+            "displayField": "title",
+            "fields": [
+                {
+                    "type": "Text",
+                    "id": "title",
+                    "name": "Header Title",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Link",
+                    "id": "logo_img",
+                    "name": "Logo",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "type": "Boolean",
+                    "id": "has_nav",
+                    "name": "Enable Navigation Menu",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Array",
+                    "id": "nav_links",
+                    "name": "Navigation Links",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "linkType": "Entry",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "Text",
+                    "id": "type",
+                    "name": "Object Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title displayed in the header if no logo image added."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "logo_img": {
+                    "settings": {
+                        "helpText": "The logo image displayed in the header."
+                    }
+                },
+                "has_nav": {
+                    "settings": {
+                        "helpText": "Display the navigation menu bar in the header.",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value"
+                },
+                "nav_links": {
+                    "settings": {
+                        "helpText": "List of navigation links."
+                    }
+                },
+                "type": {
+                    "settings": {
+                        "helpText": "The type of the object",
+                        "defaultValue": "header",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "object",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        },
+        {
+            "id": "config",
+            "name": "Site Configuration",
+            "description": null,
+            "displayField": "title",
+            "fields": [
+                {
+                    "type": "Text",
+                    "id": "title",
+                    "name": "Title",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "description",
+                    "name": "Site Description",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Symbol",
+                    "id": "layout_style",
+                    "name": "Layout Style",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "grid",
+                                "list"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Symbol",
+                    "id": "palette",
+                    "name": "Color Palette",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "black",
+                                "blue",
+                                "green",
+                                "red"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Link",
+                    "id": "header",
+                    "name": "Header Configuration",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "linkContentType": [
+                                "header"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Entry"
+                },
+                {
+                    "type": "Link",
+                    "id": "footer",
+                    "name": "Footer Configuration",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "linkContentType": [
+                                "footer"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Entry"
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_file_path",
+                    "name": "Config File Path",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "Site title"
+                    },
+                    "widgetId": "singleLine"
+                },
+                "description": {
+                    "settings": {
+                        "helpText": "The default site description used in meta data."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "layout_style": {
+                    "settings": {
+                        "helpText": "The style of the theme layout",
+                        "defaultValue": "grid"
+                    },
+                    "widgetId": "default-field-value"
+                },
+                "palette": {
+                    "settings": {
+                        "helpText": "The color palette used for the site.",
+                        "defaultValue": "green"
+                    },
+                    "widgetId": "default-field-value"
+                },
+                "header": {},
+                "footer": {},
+                "stackbit_file_path": {
+                    "settings": {
+                        "helpText": "The file path of the configuration file",
+                        "defaultValue": "site-metadata.json",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "config",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        },
+        {
+            "id": "contact",
+            "name": "Contact",
+            "description": null,
+            "displayField": "title",
+            "fields": [
+                {
+                    "type": "Text",
+                    "id": "title",
+                    "name": "Title",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "excerpt",
+                    "name": "Excerpt",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Link",
+                    "id": "img_path",
+                    "name": "Image",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "type": "Text",
+                    "id": "form_id",
+                    "name": "Form ID",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "form_action",
+                    "name": "Form Action",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Array",
+                    "id": "form_fields",
+                    "name": "Form Fields",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "linkType": "Entry",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "form_field"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "Text",
+                    "id": "submit_label",
+                    "name": "Submit Button Label",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "template",
+                    "name": "Template",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_url_path",
+                    "name": "URL Path",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "content",
+                    "name": "Content",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title of the page."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The text shown just below the page title."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "excerpt": {
+                    "settings": {
+                        "helpText": "The excerpt of the page displayed in meta data."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "img_path": {
+                    "settings": {
+                        "helpText": "The image shown below the page title and subtitle."
+                    }
+                },
+                "form_id": {
+                    "settings": {
+                        "helpText": "A unique identifier of the form. Must not contain whitespace."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "form_action": {
+                    "settings": {
+                        "helpText": "The path of your custom \"success\" page, if you want to replace the default success message."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "form_fields": {},
+                "submit_label": {
+                    "widgetId": "singleLine"
+                },
+                "template": {
+                    "widgetId": "default-field-value",
+                    "settings": {
+                        "defaultValue": "contact",
+                        "readOnly": true
+                    }
+                },
+                "stackbit_url_path": {
+                    "settings": {
+                        "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
+                    },
+                    "widgetId": "singleLine"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "Page content"
+                    },
+                    "widgetId": "markdown"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "page",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        },
+        {
+            "id": "home",
+            "name": "Home",
+            "description": null,
+            "displayField": "title",
+            "fields": [
+                {
+                    "type": "Text",
+                    "id": "title",
+                    "name": "Title",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "excerpt",
+                    "name": "Excerpt",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Boolean",
+                    "id": "has_intro",
+                    "name": "Enable Intro Section",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "intro_content",
+                    "name": "Intro Section Content",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Array",
+                    "id": "intro_actions",
+                    "name": "Intro Action Buttons",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "linkType": "Entry",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "Boolean",
+                    "id": "has_more_link",
+                    "name": "Show read more link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "more_link_text",
+                    "name": "Read more link label",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "template",
+                    "name": "Template",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_url_path",
+                    "name": "URL Path",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title of the page. If value is not set, the author name will be used."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "excerpt": {
+                    "settings": {
+                        "helpText": "The excerpt of the page displayed in meta data."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "has_intro": {
+                    "settings": {
+                        "helpText": "Display the intro section below the site header.",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value"
+                },
+                "intro_content": {
+                    "settings": {
+                        "helpText": "The text content of the intro section."
+                    },
+                    "widgetId": "markdown"
+                },
+                "intro_actions": {},
+                "has_more_link": {
+                    "settings": {
+                        "helpText": "Display the read more link in the post feed",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value"
+                },
+                "more_link_text": {
+                    "widgetId": "singleLine"
+                },
+                "template": {
+                    "widgetId": "default-field-value",
+                    "settings": {
+                        "defaultValue": "home",
+                        "readOnly": true
+                    }
+                },
+                "stackbit_url_path": {
+                    "settings": {
+                        "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
+                    },
+                    "widgetId": "singleLine"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "page",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        },
+        {
+            "id": "page",
+            "name": "Page",
+            "description": null,
+            "displayField": "title",
+            "fields": [
+                {
+                    "type": "Text",
+                    "id": "title",
+                    "name": "Title",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "excerpt",
+                    "name": "Excerpt",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Link",
+                    "id": "img_path",
+                    "name": "Image",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "type": "Text",
+                    "id": "template",
+                    "name": "Template",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_url_path",
+                    "name": "URL Path",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "content",
+                    "name": "Content",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title of the page."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The text shown just below the page title."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "excerpt": {
+                    "settings": {
+                        "helpText": "The excerpt of the page displayed in meta data."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "img_path": {
+                    "settings": {
+                        "helpText": "The image shown below the page title and subtitle."
+                    }
+                },
+                "template": {
+                    "widgetId": "default-field-value",
+                    "settings": {
+                        "defaultValue": "page",
+                        "readOnly": true
+                    }
+                },
+                "stackbit_url_path": {
+                    "settings": {
+                        "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
+                    },
+                    "widgetId": "singleLine"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "Page content"
+                    },
+                    "widgetId": "markdown"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "page",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        },
+        {
+            "id": "post",
+            "name": "Post",
+            "description": null,
+            "displayField": "title",
+            "fields": [
+                {
+                    "type": "Text",
+                    "id": "title",
+                    "name": "Title",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Date",
+                    "id": "date",
+                    "name": "Date",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Link",
+                    "id": "thumb_img_path",
+                    "name": "Featured Image",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "type": "Link",
+                    "id": "content_img_path",
+                    "name": "Alternative Featured Image",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "type": "Text",
+                    "id": "excerpt",
+                    "name": "Excerpt",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "template",
+                    "name": "Template",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_url_path",
+                    "name": "URL Path",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "content",
+                    "name": "Content",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "type": "Text",
+                    "id": "stackbit_model_type",
+                    "name": "Stackbit Model Type",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title of the post."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The text shown just below the post title."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "date": {
+                    "widgetId": "datePicker",
+                    "settings": {
+                        "format": "dateonly"
+                    }
+                },
+                "thumb_img_path": {
+                    "settings": {
+                        "helpText": "The image shown in the blog feed."
+                    }
+                },
+                "content_img_path": {
+                    "settings": {
+                        "helpText": "The image shown in the single post."
+                    }
+                },
+                "excerpt": {
+                    "settings": {
+                        "helpText": "The excerpt of the post displayed in the blog feed and meta data."
+                    },
+                    "widgetId": "singleLine"
+                },
+                "template": {
+                    "widgetId": "default-field-value",
+                    "settings": {
+                        "defaultValue": "post",
+                        "readOnly": true
+                    }
+                },
+                "stackbit_url_path": {
+                    "settings": {
+                        "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
+                    },
+                    "widgetId": "singleLine"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "Page content"
+                    },
+                    "widgetId": "markdown"
+                },
+                "stackbit_model_type": {
+                    "settings": {
+                        "helpText": "Stackbit model type",
+                        "defaultValue": "page",
+                        "readOnly": true
+                    },
+                    "widgetId": "default-field-value"
+                }
+            }
+        }
+    ],
+    "content": [
+        {
+            "modelType": "config",
+            "modelName": "config",
+            "relPath": "site-metadata.json",
+            "data": {
+                "stackbit_model_type": "config",
+                "title": "Stackbit Ampersand Theme",
+                "description": "Medium inspired blogging theme for Stackbit",
+                "layout_style": "grid",
+                "palette": "green",
+                "header": {
+                    "type": "header",
+                    "title": "Ampersand",
+                    "logo_img": "images/logo.png",
+                    "has_nav": true,
+                    "nav_links": [
+                        {
+                            "type": "action",
+                            "label": "Home",
+                            "url": "/",
+                            "style": "link",
+                            "stackbit_model_type": "object"
+                        },
+                        {
+                            "type": "action",
+                            "label": "About",
+                            "url": "/about",
+                            "style": "link",
+                            "stackbit_model_type": "object"
+                        },
+                        {
+                            "type": "action",
+                            "label": "Style Guide",
+                            "url": "/style-guide",
+                            "style": "link",
+                            "stackbit_model_type": "object"
+                        },
+                        {
+                            "type": "action",
+                            "label": "Contact",
+                            "url": "/contact",
+                            "style": "link",
+                            "stackbit_model_type": "object"
+                        }
+                    ],
+                    "stackbit_model_type": "object"
+                },
+                "footer": {
+                    "type": "footer",
+                    "content": "&copy; Stackbit. All rights reserved. This Jamstack site was created on <a href=\"https://www.stackbit.com\" target=\"_blank\" rel=\"noopener\">Stackbit</a>. Get yours <a href=\"https://app.stackbit.com/create?theme=ampersand\" target=\"_blank\" rel=\"noopener\">here</a>.",
+                    "has_social": true,
+                    "social_links": [
+                        {
+                            "type": "action",
+                            "label": "Twitter",
+                            "url": "https://twitter.com/",
+                            "style": "icon",
+                            "icon_class": "fa-twitter",
+                            "new_window": true,
+                            "stackbit_model_type": "object"
+                        },
+                        {
+                            "type": "action",
+                            "label": "Instagram",
+                            "url": "https://www.instagram.com/",
+                            "style": "icon",
+                            "icon_class": "fa-instagram",
+                            "new_window": true,
+                            "stackbit_model_type": "object"
+                        },
+                        {
+                            "type": "action",
+                            "label": "GitHub",
+                            "url": "https://github.com/",
+                            "style": "icon",
+                            "icon_class": "fa-github",
+                            "new_window": true,
+                            "stackbit_model_type": "object"
+                        },
+                        {
+                            "type": "action",
+                            "label": "LinkedIn",
+                            "url": "https://www.linkedin.com/",
+                            "style": "icon",
+                            "icon_class": "fa-linkedin",
+                            "new_window": true,
+                            "stackbit_model_type": "object"
+                        },
+                        {
+                            "type": "action",
+                            "label": "DEV",
+                            "url": "https://dev.to/",
+                            "style": "icon",
+                            "icon_class": "fa-dev",
+                            "new_window": true,
+                            "stackbit_model_type": "object"
+                        }
+                    ],
+                    "has_subscribe": true,
+                    "subscribe_title": "Subscribe for new updates",
+                    "subscribe_content": "Subscribe to my email newsletter to receive useful articles and special offers. This monthly email is sent out on the first of every month.",
+                    "subscribe_action": "/subscribe-success",
+                    "stackbit_model_type": "object"
+                },
+                "stackbit_file_path": "site-metadata.json"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "page",
+            "relPath": "about.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "About Me",
+                "subtitle": "This is a short page about me and my work",
+                "img_path": "images/about.jpg",
+                "template": "page",
+                "stackbit_url_path": "/about",
+                "content": "\n**John Doe** is a Senior Art Director from [Stockholm](https://en.wikipedia.org/wiki/Stockholm), Sweden. After graduating from The College of Visual Arts with a degree in Communication Design, he worked for three small graphic design shops where he honed his design style and sensibility.\n\nHis work has been recognized by Communication Arts, Print, How, ID, IdN, AIGA, Effie, Archive, Graphis, AdFed and Rockport. Graphic Design USA named him a person to watch in 2019.\n\n>The world always seems brighter when you’ve just made something that wasn’t there before. <cite>Neil Gaiman</cite>\n\nAs a hobby, John Doe authors the most influential design blog in Sweden with over 100,000 page views a month. He lives in Stockholm with his beautiful wife and two boys.\n\n*Thank You for reading!*\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "page",
+            "relPath": "contact-success.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "Thank You!",
+                "template": "page",
+                "stackbit_url_path": "/contact-success",
+                "content": "\nThank you for contacting me! I will get back in touch with you soon.\n\n**Have a great day!**"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "contact",
+            "relPath": "contact.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "Get in Touch",
+                "img_path": "images/contact.jpg",
+                "form_id": "contactForm",
+                "form_action": "/contact-success",
+                "form_fields": [
+                    {
+                        "type": "form_field",
+                        "input_type": "text",
+                        "name": "name",
+                        "label": "Name",
+                        "default_value": "Your name",
+                        "is_required": true,
+                        "stackbit_model_type": "object"
+                    },
+                    {
+                        "type": "form_field",
+                        "input_type": "email",
+                        "name": "email",
+                        "label": "Email",
+                        "default_value": "Your email address",
+                        "is_required": true,
+                        "stackbit_model_type": "object"
+                    },
+                    {
+                        "type": "form_field",
+                        "input_type": "select",
+                        "name": "subject",
+                        "label": "Subject",
+                        "default_value": "Please select",
+                        "options": [
+                            "Error on the site",
+                            "Sponsorship",
+                            "Other"
+                        ],
+                        "stackbit_model_type": "object"
+                    },
+                    {
+                        "type": "form_field",
+                        "input_type": "textarea",
+                        "name": "message",
+                        "label": "Message",
+                        "default_value": "Your message",
+                        "stackbit_model_type": "object"
+                    },
+                    {
+                        "type": "form_field",
+                        "input_type": "checkbox",
+                        "name": "consent",
+                        "label": "I understand that this form is storing my submitted information so I can be contacted.",
+                        "stackbit_model_type": "object"
+                    }
+                ],
+                "submit_label": "Send Message",
+                "template": "contact",
+                "stackbit_url_path": "/contact",
+                "content": "\nFill the form below to get in touch with me.\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "home",
+            "relPath": "index.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "Home",
+                "has_intro": true,
+                "intro_content": "This is the \"about\" excerpt. It can be used to provide a paragraph about yourself that people can read on the homepage to get a sense of who you are. There also exists a dedicated about page where you can write more about yourself for those who are interested.",
+                "intro_actions": [
+                    {
+                        "type": "action",
+                        "label": "Learn More",
+                        "url": "/about",
+                        "style": "primary",
+                        "stackbit_model_type": "object"
+                    },
+                    {
+                        "type": "action",
+                        "label": "Contact",
+                        "url": "/contact",
+                        "style": "secondary",
+                        "stackbit_model_type": "object"
+                    }
+                ],
+                "has_more_link": true,
+                "more_link_text": "Read more",
+                "template": "home",
+                "stackbit_url_path": "/"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "post",
+            "relPath": "posts/basic-rules-for-walking-in-the-mountains.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "Basic Rules For Walking In The Mountains",
+                "date": "2019-04-09",
+                "thumb_img_path": "images/1.jpg",
+                "content_img_path": "images/1.jpg",
+                "excerpt": "Hiking is sometimes referred to as such. This specifically refers to difficult walking through dense forest, undergrowth, or bushes, where forward progress requires pushing vegetation aside.",
+                "template": "post",
+                "stackbit_url_path": "/posts/basic-rules-for-walking-in-the-mountains",
+                "content": "\nIn the United States, Canada, the Republic of Ireland, and United Kingdom, **hiking** refers to walking outdoors on a trail, or off trail, for recreational purposes. A day hike refers to a hike that can be completed in a single day. However, in the United Kingdom, the word walking is also used, as well as rambling, while walking in mountainous areas is called hillwalking. In Northern England, Including the Lake District and Yorkshire Dales, fellwalking describes hill or mountain walks, as fell is the common word for both features there.\n\nHiking can sometimes involves bushwhacking and hiking is sometimes referred to as such. This specifically refers to difficult walking through dense forest, undergrowth, or bushes, where forward progress requires pushing vegetation aside. In extreme cases of bushwhacking, where the vegetation is so dense that human passage is impeded, a machete is used to clear a pathway. The Australian term bushwalking refers to both on and off-trail hiking. Common terms for hiking used by [New Zealanders](https://en.wikipedia.org/wiki/New_Zealand) are tramping (particularly for overnight and longer trips), walking or bushwalking. Trekking is the preferred word used to describe multi-day hiking in the mountainous regions of India, Pakistan, Nepal, North America, South America, Iran and in the highlands of East Africa. Hiking a long-distance trail from end-to-end is also referred to as trekking and as thru-hiking in some places. In North America, multi-day hikes, usually with camping, are referred to as [backpacking](https://en.wikipedia.org/wiki/Backpacking_(wilderness)).\n\n## Long Distance Hiking\n\nFrequently nowadays long distance hikes (walking tours) are undertaken along long distance paths, including the National Trails in England and Wales, the National Trail System in the USA and The Grande Randonnée (France), Grote Routepaden, or Lange-afstand-wandelpaden (Holland), Grande Rota (Portugal), Gran Recorrido (Spain) is a network of long-distance footpaths in Europe, mostly in France, Belgium, the Netherlands and Spain. There are extensive networks in other European countries of long distance trails, as well as in Canada, Australia, New Zealand, Nepal, and to a lesser extent other Asiatic countries, like Turkey, Israel, and Jordan. In the Alps of Austria, Slovenia, Switzerland, Germany, France, and Italy walking tours are often made from 'hut-to-hut', using an extensive system of mountain huts.\n\nIn the late 20th-century there has been a proliferation of official and unofficial long distance routes, which mean that hikers now are more likely to refer to using a long distance way (Britain), trail (USA), The Grande Randonnée (France), etc., than setting out on a walking tour. Early examples of long distance paths, include the Appalachian Trail in the USA and the Pennine Way in Britain. Pilgrimage routes are now treated, by some walkers, as long distance routes, and the route taken by the British National Trail the North Downs Way closely follows that of the Pilgrims' Way to Canterbury. Hiking times can be estimated by Naismith's rule or Tobler's hiking function.\n\n## Equipment\n\nThe equipment required for hiking depends on the length of the hike, but day hikers generally carry at least water, food, a map, and rain-proof gear. Hikers usually wear sturdy hiking boots for mountain walking and backpacking, as protection from the rough terrain, as well as providing increased stability. The Mountaineers club recommends a list of \"Ten Essentials\" equipment for hiking, including a compass, sunglasses, sunscreen, a flashlight, a first aid kit, a fire starter, and a knife. Other groups recommend items such as hat, gloves, insect repellent, and an emergency blanket. A GPS navigation device can also be helpful and route cards may be used as a guide.\n\n> Returning home is the most difficult part of long-distance hiking; You have grown outside the puzzle and your piece no longer fits. ― Cindy Ross\n\nProponents of ultralight backpacking argue that long lists of required items for multi-day hikes increases pack weight, and hence fatigue and the chance of injury. Instead, they recommend reducing pack weight, in order to make hiking long distances easier. Even the use of hiking boots on long-distances hikes is controversial among ultralight hikers, because of their weight.\n\n## Environmental Impact\n\nNatural environments are often fragile, and may be accidentally damaged, especially when a large number of hikers are involved. For example, years of gathering wood can strip an alpine area of valuable nutrients. and some species, such as martens or bighorn sheep, are very sensitive to the presence of humans, especially around mating season. Generally, protected areas such as parks have regulations in place to protect the environment, so as to minimize such impact. Such regulations include banning wood fires, restricting camping to established camp sites, disposing or packing out faecal matter, and imposing a quota on the number of hikers. Many hikers espouse the philosophy of Leave No Trace, following strict practices on dealing with food waste, food packaging, and other impact on the environment.\n\nHuman waste is often a major source of environmental impact from hiking, and can contaminate the watershed and make other hikers ill. 'Catholes' dug 10 to 25 cm (4 to 10 inches) deep, depending on local soil composition and covered after use, at least 60 m (200 feet) away from water sources and trails, are recommended to reduce the risk of bacterial contamination. [Source](https://en.wikipedia.org/wiki/Hiking)\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "post",
+            "relPath": "posts/fox-village-in-japan.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "Fox Village In Japan",
+                "subtitle": "Apparently, Japan is covered in magical and irresistibly cute animal sanctuaries.",
+                "date": "2018-01-11",
+                "thumb_img_path": "images/10.jpg",
+                "content_img_path": "images/10.jpg",
+                "excerpt": "Apparently, Japan is covered in magical and irresistibly cute animal sanctuaries. The Shrines of Ise have been celebrated as the prototype of Japanese architecture. Largely of wood, traditional housing and many temple buildings see the use of tatami mats and sliding doors that break down the distinction between rooms and indoor and outdoor space.",
+                "template": "post",
+                "stackbit_url_path": "/posts/fox-village-in-japan",
+                "content": "\nApparently, Japan is covered in magical and irresistibly cute animal sanctuaries. **The Shrines of Ise** have been celebrated as the prototype of Japanese architecture. Largely of wood, traditional housing and many temple buildings see the use of tatami mats and sliding doors that break down the distinction between rooms and indoor and outdoor space.\n\n> The fox never found a better messenger than himself.\n\nAs the programming of <a title=\"Japan\" href=\"http://en.wikipedia.org/wiki/Japan\" target=\"_blank\">Japan’s</a> traditional culture gradually weakened from 1945 on, individual Japanese began to exercise some personal choice in their private lives. But the newly mandated freedoms had a minimal effect on a number of key institutions.\n\nJapan’s educational, economical and political systems remained hidebound bulwarks of traditional behavior. The politically guided economic system in particular was able to generate enormous power that could be directed with the precision of a laser beam.\n\nTwelve species belong to the monophyletic group of Vulpes genus of **\"true foxes\"**. Approximately another 25 current or extinct species are always or sometimes called foxes; these foxes are either part of the paraphyletic group of the South American foxes, or of the outlying group, which consists of bat-eared fox, gray fox, and island fox. Foxes are found on every continent except Antarctica. By far the most common and widespread species of fox is the red fox *(Vulpes vulpes)* with about 47 recognized subspecies. \n\n> The fox changes his fur but not his habits.\n\nThe global distribution of foxes, together with their widespread reputation for cunning, has contributed to their prominence in popular culture and folklore in many societies around the world. The hunting of foxes with packs of hounds, long an established pursuit in Europe, especially in the British Isles, was exported by European settlers to various parts of the New World. { <a title=\"Fox\" href=\"https://en.wikipedia.org/wiki/Fox\" target=\"_blank\">Source</a> }\n\nThe interaction between Japanese and European art has been significant: for example ukiyo-e prints, which began to be exported in the 19th century in the movement known as Japonism, had a significant influence on the development of modern art in the West, most notably on post-Impressionism. Famous ukiyo-e artists include Hokusai and Hiroshige. The fusion of traditional woodblock printing and Western art led to the creation of manga, a comic book format that is now popular within and outside Japan. Manga-influenced animation for television and film is called anime. Japanese-made video game consoles have been popular since the 1980s. { <a title=\"Ise Grand Shrine\" href=\"http://en.wikipedia.org/wiki/Ise_Grand_Shrine\" target=\"_blank\">Source</a> }\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "post",
+            "relPath": "posts/fragments-of-iceland.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "Fragments of Iceland",
+                "date": "2018-01-09",
+                "thumb_img_path": "images/7.jpg",
+                "content_img_path": "images/7.jpg",
+                "excerpt": "Iceland is a Nordic country between the North Atlantic and the Arctic Ocean. It has a population of 325,671 and an area of 103,000 km2 (40,000 sq mi), making it the most sparsely populated country in Europe.",
+                "template": "post",
+                "stackbit_url_path": "/posts/fragments-of-iceland",
+                "content": "\n**Iceland** Enim nec dui nunc mattis enim ut tellus elementum sagittis. *Felis bibendum ut tristique et egestas quis ipsum suspendisse*. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Orci ac auctor augue mauris. Ut pharetra sit amet aliquam id diam. Lectus arcu bibendum at varius vel pharetra. Id nibh tortor id aliquet lectus proin nibh. Duis ut diam quam nulla porttitor massa id neque aliquam. Feugiat nibh sed pulvinar proin gravida. Dolor purus non enim praesent elementum. Pharetra convallis posuere morbi leo urna molestie. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere.\n\n> Iceland, I'm in love with that country, the people are incredible. - Kit Harington\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus sit. Massa placerat duis ultricies lacus sed. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pulvinar neque laoreet suspendisse interdum consectetur libero. Lacus viverra vitae congue eu consequat ac felis donec et. Imperdiet dui accumsan sit amet nulla facilisi. Faucibus turpis in eu mi bibendum neque. Magna etiam tempor orci eu. Cursus turpis massa tincidunt dui ut ornare. A condimentum vitae sapien pellentesque habitant. Ut porttitor leo a diam sollicitudin tempor id eu.\n\nPulvinar pellentesque habitant morbi tristique senectus et netus et. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Erat nam at lectus urna duis. Lacinia quis vel eros donec ac odio. Eget nulla facilisi etiam dignissim diam quis. Arcu dictum varius duis at consectetur lorem donec massa. Egestas tellus rutrum tellus pellentesque eu. Egestas erat imperdiet sed euismod nisi porta. Nec feugiat in fermentum posuere urna. Viverra ipsum nunc aliquet bibendum enim. Fermentum odio eu feugiat pretium. Vestibulum rhoncus est pellentesque elit. Elit ut aliquam purus sit amet luctus venenatis. Donec ac odio tempor orci dapibus ultrices in. Vitae justo eget magna fermentum. At tellus at urna condimentum mattis pellentesque id nibh tortor. Arcu dictum varius duis at consectetur lorem donec massa. Malesuada proin libero nunc consequat interdum varius sit amet. Dui accumsan sit amet nulla facilisi. Ut venenatis tellus in metus vulputate.\n\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "post",
+            "relPath": "posts/moving-to-new-york.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "Few Things I Wish I Knew Before I Moved to New York",
+                "subtitle": "A cautionary tale about life in New York",
+                "date": "2018-01-23",
+                "thumb_img_path": "images/5.jpg",
+                "content_img_path": "images/5.jpg",
+                "excerpt": "The City of New York, usually called either New York City (NYC) or simply New York (NY), is the most populous city in the United States. With an estimated 2017 population of 8,622,698 distributed over a land area of about 302.6 square miles (784 km2), New York is also the most densely populated major city in the United States.",
+                "template": "post",
+                "stackbit_url_path": "/posts/moving-to-new-york",
+                "content": "\n**The City of New York**, usually called either New York City (NYC) or simply New York (NY), is the most populous city in the United States. With an estimated 2017 population of 8,622,698 distributed over a land area of about 302.6 square miles (784 km2), New York is also the most densely populated major city in the United States.\n\nTellus id interdum velit laoreet id donec ultrices tincidunt arcu. Suscipit tellus mauris a diam maecenas sed enim ut. Risus quis varius quam quisque id diam vel. Nulla facilisi etiam dignissim diam quis enim. Sed blandit libero volutpat sed cras ornare. In metus vulputate eu scelerisque felis. Integer enim neque volutpat ac tincidunt vitae semper quis. Morbi quis commodo odio aenean sed adipiscing diam donec. Quis auctor elit sed vulputate mi sit amet mauris commodo. Maecenas sed enim ut sem viverra aliquet. Eget dolor morbi non arcu risus quis varius quam. Risus quis varius quam quisque id diam vel.\n\n> In New York it seems like there's no Monday or Saturday or Sunday. The town is always moving. The vibe is great. - Thierry Henry\n\nConvallis aenean et tortor at risus viverra adipiscing at in. Maecenas accumsan lacus vel facilisis volutpat est. Nisl suscipit adipiscing bibendum est ultricies. Nulla facilisi cras fermentum odio eu feugiat pretium. Donec ac odio tempor orci dapibus. Eget velit aliquet sagittis id. Morbi non arcu risus quis varius quam quisque id diam. Facilisis gravida neque convallis a cras semper auctor neque vitae. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Aliquam vestibulum morbi blandit cursus risus. Eget mauris pharetra et ultrices neque ornare. Donec ac odio tempor orci dapibus ultrices in. Malesuada fames ac turpis egestas sed tempus. Commodo odio aenean sed adipiscing. Vel pretium lectus quam id. Eget mi proin sed libero enim sed. Neque viverra justo nec ultrices dui sapien.\n\nDignissim diam quis enim lobortis scelerisque. Vitae elementum curabitur vitae nunc. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Et ligula ullamcorper malesuada proin libero nunc consequat interdum. Quam lacus suspendisse faucibus interdum posuere. Bibendum arcu vitae elementum curabitur vitae nunc. Ullamcorper malesuada proin libero nunc. Sit amet risus nullam eget felis eget nunc lobortis. Elementum curabitur vitae nunc sed velit dignissim sodales. Turpis in eu mi bibendum neque egestas congue quisque egestas.\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "post",
+            "relPath": "posts/relax-in-nature.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "My Way to Relax in Nature and Stress Less",
+                "subtitle": "The way I spend time out in nature can affect how much my physical and mental health will recharge and how I benefit from it.",
+                "date": "2019-03-24",
+                "thumb_img_path": "images/4.jpg",
+                "content_img_path": "images/4.jpg",
+                "excerpt": "The way I spend time out in nature can affect how much my physical and mental health will recharge and how I benefit from it.",
+                "template": "post",
+                "stackbit_url_path": "/posts/relax-in-nature",
+                "content": "\n**Relax** in Nature and Stress Less. Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.\n\n> Look deep into nature, and then you will understand everything better. - Albert Einstein\n\nAmet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.\n\nAmet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "post",
+            "relPath": "posts/what-isphotography.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "What Is Photography and What It Means To Me",
+                "subtitle": "A intresting tale about Photography and me",
+                "date": "2018-01-15",
+                "thumb_img_path": "images/8.jpg",
+                "content_img_path": "images/8.jpg",
+                "excerpt": "Photography is the science, art and practice of creating durable images by recording light or other electromagnetic radiation, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film.",
+                "template": "post",
+                "stackbit_url_path": "/posts/what-isphotography",
+                "content": "\n**Photography is the science**, art and practice of creating durable images by recording light or other electromagnetic radiation, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film.\n\nTypically, a lens is used to focus the light reflected or emitted from objects into a real image on the light-sensitive surface inside a camera during a timed exposure. With an electronic image sensor, this produces an electrical charge at each pixel, which is electronically processed and stored in a digital image file for subsequent display or processing. The result with photographic emulsion is an invisible latent image, which is later chemically \"developed\" into a visible image, either negative or positive depending on the purpose of the photographic material and the method of processing. A negative image on film is traditionally used to photographically create a positive image on a paper base, known as a print, either by using an enlarger or by contact printing.\n\n> When you photograph people in color, you photograph their clothes. But when you photograph people in Black and white, you photograph their souls! ― Ted Grant\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum posuere lorem. Sapien faucibus et molestie ac feugiat sed lectus vestibulum. Ultricies mi quis hendrerit dolor magna eget est. Est velit egestas dui id ornare arcu. Elementum tempus egestas sed sed risus. Dui ut ornare lectus sit amet est placerat. Sed arcu non odio euismod lacinia at quis risus sed. Lectus urna duis convallis convallis tellus id interdum velit. Laoreet sit amet cursus sit amet dictum sit. \n\nEtiam dignissim diam quis enim lobortis scelerisque fermentum dui. Tincidunt lobortis feugiat vivamus at augue eget. Nulla at volutpat diam ut venenatis. Amet est placerat in egestas erat. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Urna cursus eget nunc scelerisque viverra mauris in aliquam sem. Molestie a iaculis at erat pellentesque. Sed tempus urna et pharetra pharetra. Lacus viverra vitae congue eu consequat ac felis donec. Sapien eget mi proin sed libero enim sed.\n\n## Creative Photography\n\nFaucibus et molestie ac feugiat. Auctor augue mauris augue neque gravida in fermentum. Consequat semper viverra nam libero justo laoreet sit amet. Porttitor lacus luctus accumsan tortor posuere ac ut consequat. Euismod quis viverra nibh cras pulvinar mattis nunc. Nibh cras pulvinar mattis nunc sed. Pellentesque massa placerat duis ultricies. Mollis aliquam ut porttitor leo a diam. Donec et odio pellentesque diam. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin.\n\nOdio pellentesque diam volutpat commodo. Purus in mollis nunc sed id semper. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ultricies mi quis hendrerit dolor magna eget est lorem ipsum. Viverra nibh cras pulvinar mattis nunc sed blandit. Massa tincidunt dui ut ornare lectus. Turpis tincidunt id aliquet risus. Ut aliquam purus sit amet luctus venenatis lectus. Consectetur adipiscing elit pellentesque habitant. Natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Quis vel eros donec ac. Ut pharetra sit amet aliquam id. Lobortis elementum nibh tellus molestie nunc non blandit. Dignissim cras tincidunt lobortis feugiat vivamus at. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Mattis nunc sed blandit libero volutpat sed. Dignissim diam quis enim lobortis scelerisque fermentum.\n\nGravida dictum fusce ut placerat orci nulla pellentesque. Elementum nibh tellus molestie nunc non. Tortor at risus viverra adipiscing at in. Eget nulla facilisi etiam dignissim diam quis. Feugiat in fermentum posuere urna. Mollis aliquam ut porttitor leo a diam sollicitudin tempor id. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Quis imperdiet massa tincidunt nunc. Orci phasellus egestas tellus rutrum tellus pellentesque. Sagittis vitae et leo duis ut. Ornare quam viverra orci sagittis. Mi sit amet mauris commodo. Elit sed vulputate mi sit amet mauris commodo quis imperdiet."
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "post",
+            "relPath": "posts/working-from-home.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "The Advantages and Disadvantages of Working from Home",
+                "date": "2019-03-30",
+                "thumb_img_path": "images/9.jpg",
+                "content_img_path": "images/9.jpg",
+                "excerpt": "Work at home parent is an entrepreneur who works from home and integrates parenting into his or her business activities. They are sometimes referred to as a WAHM (work at home mom) or a WAHD (work at home dad).",
+                "template": "post",
+                "stackbit_url_path": "/posts/working-from-home",
+                "content": "\n**Working from home** convallis aenean et tortor at risus viverra adipiscing at in. Maecenas accumsan lacus vel facilisis volutpat est. Nisl suscipit adipiscing bibendum est ultricies. Nulla facilisi cras fermentum odio eu feugiat pretium. Donec ac odio tempor orci dapibus. Eget velit aliquet sagittis id. Morbi non arcu risus quis varius quam quisque id diam. Facilisis gravida neque convallis a cras semper auctor neque vitae. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Aliquam vestibulum morbi blandit cursus risus. Eget mauris pharetra et ultrices neque ornare.\n\n## Advantages and Disadvantages \n\nDignissim diam quis enim lobortis scelerisque. Vitae elementum curabitur vitae nunc. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Et ligula ullamcorper malesuada proin libero nunc consequat interdum. Quam lacus suspendisse faucibus interdum posuere. Bibendum arcu vitae elementum curabitur vitae nunc. Ullamcorper malesuada proin libero nunc. Sit amet risus nullam eget felis eget nunc lobortis. Elementum curabitur vitae nunc sed velit dignissim sodales. Turpis in eu mi bibendum neque egestas congue quisque egestas.\n\n> Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do. - Pele\n\nFermentum iaculis eu non diam. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Viverra nam libero justo laoreet sit amet cursus. Interdum consectetur libero id faucibus nisl tincidunt eget nullam. Aliquet sagittis id consectetur purus ut. Iaculis eu non diam phasellus. Ipsum dolor sit amet consectetur adipiscing elit duis. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Dictum sit amet justo donec enim diam. Ultrices eros in cursus turpis massa tincidunt dui. Adipiscing elit ut aliquam purus sit.\n\n## Types Of Work\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam volutpat. A diam maecenas sed enim ut sem viverra aliquet. Felis eget nunc lobortis mattis aliquam faucibus. Urna cursus eget nunc scelerisque viverra mauris. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Sapien faucibus et molestie ac feugiat sed lectus vestibulum. Ac turpis egestas sed tempus urna et pharetra pharetra massa. Vitae semper quis lectus nulla. Velit sed ullamcorper morbi tincidunt ornare. A arcu cursus vitae congue mauris. Amet nulla facilisi morbi tempus iaculis urna.\n\nFermentum iaculis eu non diam. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Viverra nam libero justo laoreet sit amet cursus. Interdum consectetur libero id faucibus nisl tincidunt eget nullam. Aliquet sagittis id consectetur purus ut. Iaculis eu non diam phasellus. Ipsum dolor sit amet consectetur adipiscing elit duis. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Dictum sit amet justo donec enim diam. Ultrices eros in cursus turpis massa tincidunt dui. Adipiscing elit ut aliquam purus sit.\n\n\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "page",
+            "relPath": "style-guide.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "Style Guide",
+                "subtitle": "The style guide provides you with a blueprint of default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.",
+                "img_path": "images/6.jpg",
+                "template": "page",
+                "stackbit_url_path": "/style-guide",
+                "content": "\n**This is a paragraph**. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line [indentation](https://en.wikipedia.org/wiki/Indentation_(typesetting)), but <abbr title=\"HyperText Markup Language\">HTML</abbr> paragraphs can be any structural grouping of related content, such as images or form fields.\n\nThe HTML &lt;h1&gt;–&lt;h6&gt; elements represent six levels of section headings. &lt;h1&gt; is the highest section level and &lt;h6&gt; is the lowest.\n\n# This is an H1\n\n## This is an H2\n\n### This is an H3\n\n#### This is an H4\n\n##### This is an H5\n\n###### This is an H6\n\nAvoid using heading tags to resize text. Instead, use the CSS font-size property. Headings use size to indicate their relative importance, but CSS is preferred for general-purpose resizing.\n\n## Quoting\n\nThe HTML blockquote element defines a long block quotation in the HTML document from another source.\n\n>Creativity is allowing yourself to make mistakes. Design is knowing which ones to keep. <cite>― Scott Adams</cite>\n\nA URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the &lt;cite&gt; element.\n\n<hr />\n\n## Unordered Lists\n\nGroups a collection of items that do not have a numerical ordering, and their order in the list is meaningless.\n\n+ Donec non tortor in arcu mollis feugiat\n+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit\n+ Donec id eros eget quam aliquam gravida\n+ Vivamus convallis urna id felis\n+ Nulla porta tempus sapien\n\n## Ordered Lists\n\nRepresents a list of items. The only difference from the unordered list is taht the order of the items is meaningful.\n\n1. Donec non tortor in arcu mollis feugiat\n2. Lorem ipsum dolor sit amet, consectetuer adipiscing elit\n3. Donec id eros eget quam aliquam gravida\n4. Vivamus convallis urna id felis\n5. Nulla porta tempus sapien\n\n## Code Blocks\n\n```\n/* Some example CSS code */\nbody {\n  color: #333;\n  font-family: Roboto, Helvetica, Arial, sans-serif;\n  line-height: 1.5;\n}\n```\n\n## Tables\n\n<div class=\"responsive-table\">\n  <table>\n    <caption>Simple table with caption and header</caption>\n    <thead>\n      <tr>\n        <th>Column 1</th>\n        <th>Column 2</th>\n        <th>Column 3</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>Row 1, Cell 1</td>\n        <td>Row 1, Cell 2</td>\n        <td>Row 1, Cell 3</td>\n      </tr>\n      <tr>\n        <td>Row 2, Cell 1</td>\n        <td>Row 2, Cell 2</td>\n        <td>Row 2, Cell 3</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n"
+            }
+        },
+        {
+            "modelType": "page",
+            "modelName": "page",
+            "relPath": "subscribe-success.md",
+            "data": {
+                "stackbit_model_type": "page",
+                "title": "You’re in!",
+                "template": "page",
+                "stackbit_url_path": "/subscribe-success",
+                "content": "\nYour subscription to **Ampersand Newsletter** has been confirmed.\n\n**Thank you for subscribing!**\n"
+            }
+        }
+    ]
+}
